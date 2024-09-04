@@ -1,0 +1,30 @@
+#how to install one of the precompiled releases of VMD
+#VMD is made available free of charge for all interested end-users of the software.
+#Registration is part of VMD download procedure. 
+lscpu
+flags: avx512 (avx512vl, avx512cd, avx512f, etc) > LINUX MIC-AVX512 Text-mode 
+flags: POWER(POWER8, POWER9, POWER10) & CPU model vsx >  LINUX OpenPOWER 
+cat /proc/cpuinfo | grep 'vendor_id'
+#check the installation of vendor-provided OpenGL:
+glxinfo | grep "OpenGL"
+nvidia-smi
+nvidia-settings --version
+glxinfo | grep "AMD"
+#For Intel (using Mesa)
+#For checking error:
+cat /var/log/Xorg.0.log | grep -i "glx"
+#conda install: To install this package run one of the following:
+conda install conda-forge::vmd
+conda install conda-forge/label/cf202003::vmd
+#The Unix version of VMD:
+#files are placed in the INSTALLLIBDIR directory (usually /usr/local/lib/vmd).
+tar -zxvf vmd-1.9.3.bin.LINUXMIC-AVX512-CUDA75-OptiX390-OSPRay111p1.opengl.tar.gz
+sudo mv vmd-1.9.3 /usr/local/
+cd /usr/local/vmd-1.9.3
+./configure
+# Directory where VMD startup script is installed, should be in users' paths will be: #$install_bin_dir="/usr/local/bin";
+sudo ./configure LINUXAMD64
+cd src/
+sudo make install
+
+
