@@ -1,0 +1,40 @@
+#A NAMD binary distribution need only be untarred or unzipped 
+tar -zxvf NAMD_3.0b7_Linux-x86_64-multicore-CUDA.tar.gz
+#move untarred to the desired installation location.
+sudo mv NAMD_3.0b7_Linux-x86_64-multicore-CUDA /usr/local/lib/
+cd NAMD_3.0b7_Linux-x86_64-multicore-CUDA
+sudo su
+cp namd3 /usr/local/bin
+namd3 #you will get error 
+# namd3 
+#Charm++> No provisioning arguments specified. Running with a single PE.
+#         Use +auto-provision to fully subscribe resources or +p1 to silence this message.
+#Charm++: standalone mode (not using charmrun)
+#Charm++> Running in Multicore mode: 1 threads (PEs)
+#Charm++> Using recursive bisection (scheme 3) for topology aware partitions
+#Converse/Charm++ Commit ID: 
+#CharmLB> Load balancer assumes all CPUs are same.
+#Charm++> Running on 1 hosts (1 sockets x 12 cores x 2 PUs = 24-way SMP)
+#Charm++> cpu topology info is gathered in 0.000 seconds.
+#Info: Built with CUDA version 11080
+#Did not find +devices i,j,k,... argument, using all
+#Pe 0 physical rank 0 binding to CUDA device 0 on Bios: 'NVIDIA GeForce RTX 4070'  Mem: #11986MB  Rev: 8.9  PCI: 0:1:0
+#Info: NAMD 3.0b7 for Linux-x86_64-multicore-CUDA
+#Info: 
+#Info: Please visit http://www.ks.uiuc.edu/Research/namd/
+#Info: for updates, documentation, and support information.
+#Info: 
+#Info: Please cite Phillips et al., J. Chem. Phys. 153:044130 (2020) doi:10.1063/5.0014475
+#Info: in all publications reporting results obtained with NAMD.
+#Info: 
+#Info: Based on Charm++/Converse 70000 for multicore-linux-x86_64-gcc
+#Info: Built Fri May 10 16:01:53 CDT 2024 by dhardy on athine.ks.uiuc.edu
+#Info: 1 NAMD  3.0b7  Linux-x86_64-multicore-CUDA  1    Bios  root
+#Info: Running on 1 processors, 1 nodes, 1 physical nodes.
+#Info: CPU topology information available.
+#Info: Charm++/Converse parallel runtime startup completed at 0.0522453 s
+#CkLoopLib is used in SMP with simple dynamic scheduling (converse-level notification)
+#FATAL ERROR: No simulation config file specified on command line.
+#FATAL ERROR: No simulation config file specified on command line.
+#[Partition 0][Node 0] End of program#
+
