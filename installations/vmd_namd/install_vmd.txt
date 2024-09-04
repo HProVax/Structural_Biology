@@ -1,3 +1,4 @@
+#https://www.ks.uiuc.edu/Research/vmd/current/ig/ig.html
 #how to install one of the precompiled releases of VMD
 #VMD is made available free of charge for all interested end-users of the software.
 #Registration is part of VMD download procedure. 
